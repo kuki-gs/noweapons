@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head> 
+<meta charset="utf-8"> 
+    {% if title %}
+    <title>{{title}} - noweapons</title>
+    {% else %}
+    <title>noweapons</title>
+    {% endif %}
+</head>
+<body>
+ 
+<div id="container" style="width:100%">
+ 
+    <div id="header" style="background-color:#FFA500;">
+        <h1 style="margin-bottom:0;">三种武器</h1>
+        <hr>
+    </div>
+     
+    <div id="menu" style="background-color:#FFD700;height:800px;width:20%;float:left;">
+        <b>菜单</b><br>
+        <hr>
+        <form name="choice" action="/" method="get">
+            <input type="radio" name="func" value="cluster">聚类<br>
+            <input type="radio" name="func" value="overcover">过覆盖<br>
+            <input type="radio" name="func" value="overlapping">重叠覆盖<br>
+            TAC: <input type="text" name="tac"><br>
+            ECI: <input type="text" name="eci">
+            <input type="submit" value="查询">
+        </form> 
+    </div>
+     
+    <div id="content" style="background-color:#EEEEEE;height:800px;width:80%;float:left;">
+        {% block content %}{% endblock %}
+    
+    </div>
+   
+    <div id="footer" style="background-color:#FFA500;clear:both;text-align:center;">
+        版权 © kuki.com
+    </div>
+</div>
+ 
+</body>
+</html>
